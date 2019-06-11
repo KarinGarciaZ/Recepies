@@ -12,13 +12,14 @@ export class RecipesComponent implements OnInit {
 
   recipe: Recipe;
 
-  constructor() { }
+  constructor( private recipeService: RecipeService ) { }
 
   ngOnInit() {
-  }
-
-  onGetRecipe( recipe: Recipe ) {
-    this.recipe = recipe
+    this.recipeService.recipeSelected.subscribe(
+      (recipe: Recipe) => {
+        this.recipe = recipe
+      }
+    )
   }
 
 }
