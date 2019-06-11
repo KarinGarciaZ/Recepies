@@ -18,7 +18,6 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   onAddItem() {
-    event.preventDefault()
     this.shoppingListService.addIngredient( new Ingredient( this.nameInputRef.nativeElement.value, this.amountInputRef.nativeElement.value ) )
   }
 
